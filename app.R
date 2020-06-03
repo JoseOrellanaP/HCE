@@ -10,7 +10,7 @@ ui <- fluidPage(
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
         sidebarPanel(
-            sliderInput("bins",  "Number of bins:",  min = 10,  max = 50,   value = 20)
+            sliderInput("bins",  "Number of bins:",  min = 10,  max = 50,   value = 25)
         ),
 
         # Show a plot of the generated distribution
