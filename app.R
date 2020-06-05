@@ -23,7 +23,7 @@ ui <- dashboardPagePlus(
     ),
     ######################################################
     # Menu lateral
-    ######################################################
+    ###################################################### 
     sidebar = dashboardSidebar( 
         sidebarMenu(
             menuItem("Paciente", tabName = "paciente", icon = icon("user-plus")),
