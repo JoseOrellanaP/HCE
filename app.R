@@ -61,13 +61,14 @@ ui <- dashboardPagePlus(
                                    column(2, textInput("parroquia", "Parroquia", value = "Cañaribamaba", width = NULL,  placeholder = NULL)),
                                    column(2, textInput("canton", "Canton", value = "Cuenca", width = NULL,  placeholder = NULL)),
                                    column(2, textInput("provincia", "Provincia", value = "Azuay", width = NULL,  placeholder = NULL)),
-                                   column(2, textInput("telefono", "Telefono", value = "72809948", width = NULL,  placeholder = NULL))
+                                   column(2, numericInput("telefono", "Telefono", value = ""))
                                 ),
                                 fluidRow(
                                     column(2,textInput("fecha_nacimiento", "Fecha Nacim.", value = "01/06/2020", width = NULL,  placeholder = NULL)  ),
                                     column(2,textInput("lugar_nacimiento", "Lugar Nacim.", value = "Cuenca", width = NULL,  placeholder = NULL)  ),
                                     column(2,textInput("nacionalidad", "Nacionalidad", value = "Ecuador", width = NULL,  placeholder = NULL)  ),
-                                    column(2,textInput("sexo", "Sexo", value = "H", width = NULL,  placeholder = NULL)),
+                                    #column(2,textInput("sexo", "Sexo", value = "H", width = NULL,  placeholder = NULL)),
+                                    column(2,selectInput("sexo", "Sexo", choices = c('Masculino', 'Femenino'))),
                                     column(2,textInput("estado_civil", "Estado Civil", value = "Soltero", width = NULL,  placeholder = NULL)),
                                     column(2,textInput("educacion", "educacion", value = "Universidad", width = 100,  placeholder = NULL))
                                
@@ -76,7 +77,7 @@ ui <- dashboardPagePlus(
                                     column(4, textInput("persona_contacto", "Contacto Emergencia", value = "Miguel Zhunio", width = NULL,  placeholder = NULL)),
                                     column(2, textInput("parentesco", "Parentesco", value = "padre", width = NULL,  placeholder = NULL)),
                                     column(4, textInput("direccion", "Direccion", value = "Rumiñahui 120", width = NULL,  placeholder = NULL)),
-                                    column(2, textInput("telefono", "Telefono", value = "123456", width = NULL,  placeholder = NULL))
+                                    column(2, numericInput("telefono", "Telefono Contacto", value = ""))
                                 )
                                              
                               )
