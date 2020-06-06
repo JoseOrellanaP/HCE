@@ -86,7 +86,57 @@ ui <- dashboardPagePlus(
                                    DTOutput('x2')
                     ),
                     accordionItem( id = 3, title = "3) Registro de Cambios", color = "info", collapsed = TRUE,
-                        "This is some text!"
+                                   fluidRow(  
+                                       column(12,
+                                              fluidRow(  style = "background-color:#c0c0c0;",
+                                                  column(2, textInput("fecha_1", "Fecha", value = "01/01/1999", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("estado_civil_1", "Estado Civil", value = "Soltero", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("educacion_1", "Educacion", value = "Universidad", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("ocupacion_1", "Ocupacion", value = "Ingeniero", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("empresa_1", "Empresa", value = "Grupo Techint", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("seguro_salud_1", "Tipo Seguro", value = "", width = NULL,  placeholder = NULL))
+                                              ),
+                                              fluidRow( style = "background-color:#c0c0c0;",
+                                                  column(4, textInput("direccion_1", "Direccion", value = "Rumiñahui 120 y C. Chaparra", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("parroquia_1", "Parroquia", value = "Cañaribamaba", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("canton_1", "Canton", value = "Cuenca", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("provincia_1", "Provincia", value = "Azuay", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("telefono_1", "Telefono", value = "72809948", width = NULL,  placeholder = NULL))
+                                              ),
+                                              
+                                              fluidRow(
+                                                  column(2, textInput("fecha_2", "Fecha", value = "01/01/1999", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("estado_civil_2", "Estado Civil", value = "Soltero", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("educacion_2", "Educacion", value = "Universidad", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("ocupacion_2", "Ocupacion", value = "Ingeniero", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("empresa_2", "Empresa", value = "Grupo Techint", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("seguro_salud_2", "Tipo Seguro", value = "", width = NULL,  placeholder = NULL))
+                                              ),
+                                              fluidRow(
+                                                  column(4, textInput("direccion_2", "Direccion", value = "Rumiñahui 120 y C. Chaparra", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("parroquia_2", "Parroquia", value = "Cañaribamaba", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("canton_2", "Canton", value = "Cuenca", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("provincia_2", "Provincia", value = "Azuay", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("telefono_2", "Telefono", value = "72809948", width = NULL,  placeholder = NULL))
+                                                  
+                                              ),fluidRow(  style = "background-color:#c0c0c0;",
+                                                  column(2, textInput("fecha_3", "Fecha", value = "01/01/1999", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("estado_civil_3", "Estado Civil", value = "Soltero", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("educacion_3", "Educacion", value = "Universidad", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("ocupacion_3", "Ocupacion", value = "Ingeniero", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("empresa_3", "Empresa", value = "Grupo Techint", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("seguro_salud_3", "Tipo Seguro", value = "", width = NULL,  placeholder = NULL))
+                                              ),
+                                              fluidRow( style = "background-color:#c0c0c0;",
+                                                  column(4, textInput("direccion_3", "Direccion", value = "Rumiñahui 120 y C. Chaparra", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("parroquia_3", "Parroquia", value = "Cañaribamaba", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("canton_3", "Canton", value = "Cuenca", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("provincia_3", "Provincia", value = "Azuay", width = NULL,  placeholder = NULL)),
+                                                  column(2, textInput("telefono_3", "Telefono", value = "72809948", width = NULL,  placeholder = NULL))
+                                              )
+                                              
+                                       )
+                                   )
                     )
                 )
             )
