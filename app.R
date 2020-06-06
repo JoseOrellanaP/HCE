@@ -2,6 +2,7 @@ library(shiny)
 library(shinyWidgets)
 library(shinydashboard)
 library(shinydashboardPlus)
+library(DT)
 
 # Define UI for application that draws a histogram
 ui <- dashboardPagePlus( 
@@ -82,7 +83,7 @@ ui <- dashboardPagePlus(
                             ),
                     ),
                     accordionItem( id = 2, title = "2) Registro Nuevas Admisiones - Atenciones de 1era vez y subsecuentes", color = "warning", collapsed = TRUE,
-                        "This is some text!"
+                                   DTOutput('x2')
                     ),
                     accordionItem( id = 3, title = "3) Registro de Cambios", color = "info", collapsed = TRUE,
                         "This is some text!"
@@ -93,9 +94,35 @@ ui <- dashboardPagePlus(
             )
         ), # end tabItem Paciente
         ##########################
-        tabItem(tabName = "hce00",
-
+        tabItem(tabName = "hce",
+                fluidRow( 
                     
+                    widgetUserBox(  title = "Nadia Carmichael",  subtitle = "lead Developer", width = 12,  type = 2,
+                                    src = "https://adminlte.io/themes/AdminLTE/dist/img/user7-128x128.jpg",
+                                    color = "yellow",  "Some text here!",
+                                    footer = "The footer here!"    
+                    )
+                ),
+                fluidRow(
+                    
+                    flipBox( id = 1,
+                             main_img = "https://image.flaticon.com/icons/svg/149/149076.svg",
+                             header_img = "https://image.flaticon.com/icons/svg/119/119595.svg",
+                             front_title = "John Doe",  back_title = "About John",
+                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                         riatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia eserunt mollit anim id est laborum",
+                             verticalProgress( value = 10, striped = TRUE, active = TRUE ),
+                             verticalProgress( value = 50,  active = TRUE, status = "warning", size = "xs" ),
+                             verticalProgress( value = 20, status = "danger", size = "sm",  height = "60%" ),
+                             
+                             back_content = tagList( column( width = 12, align = "center",   
+                                                             sliderInput("flip_obs", "Number of observations:",  min = 0, max = 100, value = 50 )
+                             ),
+                             plotOutput("flipPlot")
+                             )                       
+                    )
+                )
+                
         ), # end tabItem HCE
         ##########################
         tabItem(tabName = "consulta",
@@ -116,7 +143,16 @@ ui <- dashboardPagePlus(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
 
+###########################
+# Nuevas Admisiones
+###########################
     
+    x = iris
+    x$Date = Sys.time() + seq_len(nrow(x))
+    colnames(x) <- c("Edad", "Referido de", "Aten_Primera","Aten_Subsecuente","Admisionista","Fecha")
+    x$Edad <- x$Edad*10
+    output$x2 = renderDT(x, selection = 'none', server = F, editable = T)
+#########    
 
 }
 
